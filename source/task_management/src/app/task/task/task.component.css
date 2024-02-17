@@ -1,0 +1,301 @@
+
+
+section{
+    max-width: 95%;
+    height: 100%;
+    overflow: hidden;
+}
+label{
+    margin: 0;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+}
+ .main .heading{
+    width: 100%;
+    padding: 5px 10px;
+}
+.heading input{
+    padding: 5px 10px;
+    font-size: 26px;
+    font-weight: 600;
+}
+.input_text{
+    width: 90%;
+    text-overflow: ellipsis;
+    overflow: auto;
+    border: none;
+    outline: none;
+    background: transparent ;
+}
+.input_text:focus{
+    background: white;
+    border-bottom: 1px black solid;
+    outline: invert;
+}
+.task_list{
+    width: 100%;
+    padding: 5px 30px;
+}
+.task_list .task_item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    flex-grow: 1;
+    padding: 0 15px;
+}
+.task_item .task_title{
+    width: 100%;
+    padding: 2px 10px 12px 0;
+}
+.task_title input{
+    padding: 5px 10px 5px 0;
+    font-size: 16px;
+
+}
+.task_item .deadline{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    padding: 10px 5px 12px 0;
+}
+.deadline label{
+    padding: 2px 0;
+    margin-top: 5px;
+}
+.deadline input{
+    width: auto;
+    flex-shrink: 1;
+    flex-grow: 0;
+    padding: 2px 0;
+}
+.task_item .progress{
+    display: flex;
+    width: 100%;
+    justify-content: start;
+    height: auto;
+    font-size: 1em;
+    background: transparent;
+    padding: 0 0 12px 0;
+    flex-wrap: wrap;
+}
+.progress label{
+    font-size: 16px;
+    padding: 2px 5px 0 0;
+    flex: 1 1 20%;
+}
+.progress input{
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline:none;
+    margin-left: 10px;
+}
+.progress input:focus{
+    background: white;
+}
+.progress progress{
+    padding: 16px 15px;
+    flex:  1 1 50%;
+}
+.progress .btn_progress{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 5px;
+}
+.btn{
+    padding: 0 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: rgb(102, 80, 80);
+    color: white;
+    opacity: 0.5;
+}
+.btn:hover{
+    opacity: 1;
+    background: black;
+}
+.task_item .priority{
+    width: 100%;
+    padding: 2px 15px 12px 0 ;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: auto;
+    gap: 20px;
+}
+.priority label{
+    min-height: 20%;
+}
+.priority input{
+    flex-grow: 0;
+    max-width: 30%;
+}
+.task_item .note,
+.task_item .attachment{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+}
+.note .heading_note,
+.attachment .heading_attachmant{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: black;
+    padding: 12px 0;
+}
+.note .add_note{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 10px 5px;
+}
+.add_note input{
+    padding: 2px 10px;
+    border-radius: 8px;
+    overflow: auto;
+    text-overflow: ellipsis;
+}
+.note .list_note{
+    width: 100%;
+    padding: 10px;
+    flex-direction: row;
+}
+.list_note .note_item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+.note_item .input_content{
+    flex: 1 1 60%;
+    text-overflow: ellipsis;
+    overflow: auto;
+    padding: 2px 0px;
+}
+.note_item .input_date{
+    width: 25% ;
+    padding: 2px 10px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+.attachment .add_attachment{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 5px;
+}
+.add_attachment .add_box,
+.add_attachment .add_btn_att{
+    display: flex;
+    justify-content: flex-end;
+}
+.add_box label{
+    padding: 2px 10px;
+}
+.add_box input{
+    padding: 2px 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    overflow: auto;
+    text-overflow: ellipsis;
+}
+.add_box .input_file{
+    padding: 2px;
+    font-size: 14px;
+}
+.add_btn_att button{
+    padding: 6px 26px;
+    border-radius: 8px;
+    background: rgb(102, 80, 80);
+    opacity: 0.5;
+    color: white;
+}
+.add_btn_att button:hover{
+    opacity: 1;
+    background: black;
+    transition: .2s;
+}
+.attachment .list_attachment{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 15px 10px;
+}
+.list_attachment a{
+    max-width: 80%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 18px;
+}
+.btn_task{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 10px 0;
+    border-top: 1px black solid;
+    flex-wrap: wrap;
+}
+.btn_task button{
+    border-radius: 8px;
+    padding: 6px 18px;
+    color: white;
+    background: rgb(102, 80, 80);
+    opacity: 0.5;
+}
+.btn_task button:hover{
+    opacity: 1;
+    background: black;
+}
+@media(max-width: 350px){
+    .prs_un{
+        display:  none;
+    }
+    .btn{
+        padding: 0 2px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        background: rgb(102, 80, 80);
+        color: white;
+        opacity: 0.5;
+        font-size: 0.6rem;
+
+    }
+    .btn_task button{
+        border-radius: 8px;
+        padding: 2px;
+        color: white;
+        background: rgb(102, 80, 80);
+        opacity: 0.5;
+        font-size: 0.8rem;
+    }
+    .add_btn_att button{
+        padding: 2px;
+        border-radius: 8px;
+        background: rgb(102, 80, 80);
+        opacity: 0.5;
+        color: white;
+        font-size: 0.6rem;
+    }
+}

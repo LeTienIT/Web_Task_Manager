@@ -1,0 +1,164 @@
+
+
+section{
+    max-width: 95%;
+    height: 100%;
+    /* display: flex; */
+    overflow: hidden;
+}
+.heading{
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px 0;
+}
+.form_search{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 10px 20px;
+}
+
+.form_search input{
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    /* width: 30%; */
+    margin-right: 12px;
+    overflow: scroll;
+}
+.form_search button{
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.form_search button:hover{
+    background: black;
+    color: white;
+}
+.list_projects{
+    margin-left: 10px;
+    padding: 12px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    overflow: hidden;
+}
+.list_projects .project_box{
+    padding: 24px 10px;
+    display: flex;
+    flex-direction: column;
+    /* width: 860px;
+    height: 110px; */
+    /* max-width: 800px; */
+    border-bottom: .5px solid black;
+    
+}
+.list_projects .project_box:hover{
+    cursor: pointer;
+    color: rgb(119, 0, 255);
+}
+/* .project_box:hover ~ .project_title h5{
+    cursor: pointer;
+    color: aqua;
+} */
+.project_box .project_title{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    /* max-width: 800px; */
+    overflow: hidden;
+}
+.project_title h5{
+    /* flex: 1 1 10%; */
+    /* width: 80%; */
+    /* flex-grow: 1; */
+    display: inline-block;
+    max-width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 2px 12px 0 0;
+    font-weight: 500;
+    margin: 0;
+    color: white;
+}
+.project_title h6{
+    margin: 0;
+    /* width: 100%; */
+    padding: 0 12px;
+    background: white;
+    margin-left: 12px;
+    border-radius: 15px;
+    opacity: .8;
+    color: black;
+}
+.project_description{
+    padding: 6px 0px;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.project_description h6{
+    display: inline-block;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: black;
+}
+.loading{
+    position: absolute;
+    top: 0;left: 0;bottom: 0;right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(43, 41, 41, 0.89);
+    opacity: .6;
+}
+.loading h3 {
+    display: inline-block;
+    margin: 0 5px;
+    opacity: 0;
+    transform: translateY(0);
+    animation: bounce 0.5s infinite alternate;
+    font-size: 5rem;
+    color: white;
+    opacity: 1;
+}
+  
+@keyframes bounce {
+    to {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+  }
+@media(max-width: 450px){
+    .form_search{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        flex-wrap: wrap;
+    }
+    .form_search .input_box{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form_search input{
+        padding: 2px;
+        border-radius: 5px;
+        font-size: 12px;
+        /* width: 30%; */
+        overflow: scroll;
+    }
+    .form_search button{
+        padding: 1px;
+        border-radius: 5px;
+    }
+}

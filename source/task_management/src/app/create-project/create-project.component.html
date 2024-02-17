@@ -1,0 +1,67 @@
+<section>
+    <div class="main">
+        <div class="create_project" [formGroup]="form_project">
+            <H3 class="text_header">Project</H3>
+            <div class="form_box">
+                <label>Title</label>
+                <input type="text" formControlName="project_Title">
+            </div>
+            <div class="form_box">
+                <label>Description</label>
+                <input type="text" formControlName="project_Description">
+            </div>
+            <div class="form_box">
+                <label>Start Date</label>
+                <input type="date" formControlName="project_StartDate">
+            </div>
+            <div class="form_box">
+                <label>End Date</label>
+                <input type="date" formControlName="project_EndDate">
+            </div>
+            <div class="form_box_visibility">
+                <label>Visibility</label>
+                <select formControlName="project_Visibility">
+                    <option checked value="false">Private</option>
+                    <option value="true">Public</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="create_project create_task" [formGroup]="form_task">
+            <H3 class="text_header">Task</H3>
+                <div class="quantity">
+                    <button type="button" (click)="addTaskFormGroup()">Thêm Task</button>
+                    <button type="button" (click)="removeLastTask()">Xóa Task</button>
+                </div>
+            <div class="list_task" formArrayName="tasks" *ngFor="let taskGroup of tasksFormArray.controls;let i = index">
+                <div class="task_item" [formGroupName]="i">
+                    <div class="form_item" >
+                        <label>Title</label>
+                        <input type="text" formControlName="task_title">
+                    </div>
+                    <div class="form_item">
+                        <label>Description</label>
+                        <input type="text" formControlName="task_Description">
+                    </div>
+                    <div class="form_item">
+                        <label>Priority</label>
+                        <input type="number" formControlName="task_Priority" min="1" max="100">
+                    </div>
+                    <div class="form_item">
+                        <label>Deadline</label>
+                        <input type="date" formControlName="task_Deadline">
+                    </div>
+                    <div class="form_item">
+                        <label>Status</label>
+                        <input type="number" formControlName="task_Status" min="0" max="100" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>{{check_create}}</p>
+        <div class="btn_controller">
+            <button type="button" (click)="submit_Main()">Create</button>
+            <button type="button" (click)="btn_back()">Back</button>
+        </div>
+    </div>
+</section>

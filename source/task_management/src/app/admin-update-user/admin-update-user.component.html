@@ -1,0 +1,44 @@
+
+
+<section>
+    <div class="main">
+        <div class="heading">
+           <h1>Update Account</h1> 
+        </div>
+        <form class="from_account" *ngIf="user_info && form_account" [formGroup]="form_account" (ngSubmit)="submit_form()">
+            <div class="form_box">
+                <input type="text" readonly formControlName="username" style="opacity: .5;">
+                <label>Username</label>
+            </div>
+
+            <div class="form_box">         
+                <input type="text" formControlName="fullname">
+                <label>Full name</label>
+            </div>
+
+            <div class="form_box"> 
+                <input type="text" formControlName="email">
+                <label>Email</label>
+            </div>
+
+            <div class="form_box">    
+                <input type="password" formControlName="password"> 
+                <label>Password</label>
+            </div>
+            <div class="form_box" *ngIf="user_info.isadmin===1">
+                <p>This is the ADMIN account</p>
+            </div>
+            <div class="form_box" *ngIf="user_info.isadmin!==1">
+                <select formControlName = "isadmin">
+                    <option value="0" checked>Client</option>
+                    <option value="1">Admin</option>
+                </select>
+            </div>
+            <p>{{check_update}}</p>
+            <div class="form_btn">
+                <button type="submit">Update</button>
+                <button type="button" (click)=" btn_back()">Back</button>
+            </div>
+        </form>
+    </div>
+</section>

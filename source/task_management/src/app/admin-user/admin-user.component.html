@@ -1,0 +1,40 @@
+
+
+<section>
+    <div class="main" >
+        <form class="form_search" (submit)="$event.preventDefault();">
+            <div class="input_box">
+                <input type="text" [(ngModel)]="searchTitle" name="searchTitle"> <!-- -->
+                 <button type="button" (click)="search_Title()">Search</button><!-- -->
+            </div>
+        </form>
+        <div class="list_user" *ngIf="!check_search"><!--*ngIf="list_user" -->
+             <div class="box_user" *ngFor="let u of list_user"><!--  -->
+                <div class="userfullname">
+                    {{u.fullname}}
+                </div>
+                <div class="user_email">
+                    {{u.email}}
+                </div>
+                <div class="box_button" *ngIf="userID!=u.userid">
+                    <button (click)="btn_update_user(u.userid)">Update</button>
+                    <button (click)="btn_delete(u.userid)">Delete</button>
+                </div>
+            </div>
+        </div>   
+        <div class="list_user" *ngIf="check_search"><!--*ngIf="list_user" -->
+            <div class="box_user" *ngFor="let u of list_user_search" ><!--  -->
+               <div class="userfullname">
+                   {{u.fullname}}
+               </div>
+               <div class="user_email">
+                   {{u.email}}
+               </div>
+               <div class="box_button" *ngIf="userID!=u.userid">
+                   <button (click)="btn_update_user(u.userid)">Update</button>
+                   <button (click)="btn_delete(u.userid)">Delete</button>
+               </div>
+           </div>
+       </div>   
+    </div>
+</section>

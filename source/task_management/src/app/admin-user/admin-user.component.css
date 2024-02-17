@@ -1,0 +1,114 @@
+section{
+    max-width: 95%;
+    height: 100%;
+    overflow: hidden;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    padding: 20px 
+}
+.form_search{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 10px 20px;
+}
+.form_search input{
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    /* width: 30%; */
+    margin-right: 12px;
+    overflow: scroll;
+}
+.form_search button{
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.form_search button:hover{
+    background: black;
+    color: white;
+}
+
+.list_user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    width: 100%;
+    padding: 28px 
+}
+.box_user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 20px 10px;
+}
+.box_user .userfullname{
+    width: 40%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.box_user .user_email{
+    width: 30%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.box_user .box_button{
+    flex: 1 1 10%;
+}
+.box_button button{
+    padding: 3px 8px;
+    margin-left: 5px;
+    border-radius: 6px;
+}
+@media(max-width: 750px) {
+    .box_button button{
+        padding: 1px;
+        font-size: 9px;
+    }
+}
+@media(max-width: 470px){
+    .form_search{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        flex-wrap: wrap;
+    }
+    .form_search .input_box{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form_search input{
+        padding: 2px;
+        border-radius: 5px;
+        font-size: 12px;
+        /* width: 30%; */
+        overflow: scroll;
+    }
+    .form_search button{
+        padding: 1px;
+        border-radius: 5px;
+    }
+    .box_user .userfullname{
+        flex: 1 1 50%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .user_email{
+        display: none;
+    }
+    .box_user .box_button{
+        flex: 2 1 20%;
+    }
+}

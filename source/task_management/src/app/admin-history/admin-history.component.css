@@ -1,0 +1,104 @@
+
+section{
+    max-width: 95%;
+    height: 100%;
+    overflow: hidden;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    padding: 20px 
+}
+.form_search{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 10px 20px;
+}
+.form_search input{
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    /* width: 30%; */
+    margin-right: 12px;
+    overflow: scroll;
+}
+.form_search button{
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.form_search button:hover{
+    background: black;
+    color: white;
+}
+.list_history{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    width: 100%;
+    padding: 28px 
+}
+.box_history{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 20px 10px;
+}
+.box{
+    padding: 0 8px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.userID{
+    width: 10%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.actione{
+    width: 20%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.detail{
+    flex: 1 1 10%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.time{
+    width: 20%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+@media(max-width: 470px){
+    .form_search{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        flex-wrap: wrap;
+    }
+    .form_search .input_box{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form_search input{
+        padding: 2px;
+        border-radius: 5px;
+        font-size: 12px;
+        /* width: 30%; */
+        overflow: scroll;
+    }
+    .form_search button{
+        padding: 1px;
+        border-radius: 5px;
+    }
+}

@@ -1,0 +1,74 @@
+<section>
+    <form [formGroup]="form_task" class="main" *ngIf="_task" (ngSubmit)="submit_form()">
+        <div class="heading">
+            <input class="input_text" type="text" formControlName="task_title">
+        </div>
+        <div class="task_list">
+            <div class="task_item">
+                <div class="task_title">
+                    <input class="input_text" type="text" formControlName="task_description">
+                </div>
+                <div class="deadline">
+                    <label>Hạn cuối</label>
+                    <input type="date" class="input_text" formControlName="task_deadline">
+                </div>
+                <div class="progress">
+                    <label>Tiến độ</label>
+                    <progress value="{{_task.status}}" max="100"></progress>
+                    <label class="prs_un"><input type="number" formControlName="task_status"></label>
+                    <div class="btn_progress">
+                        <button type="button" (click)="increase()" class="btn">+</button>
+                        <button type="button" (click)="decrease()" class="btn">-</button>
+                    </div>
+                </div>
+                <div class="priority">
+                    <label>Độ ưu tiên</label>
+                    <input type="text" class="input_text" formControlName="task_priority">
+                </div>
+                <div class="note">
+                    <div class="heading_note">Ghi chú</div>
+                    <form class="add_note" [formGroup]="form_note" (ngSubmit)="submit_form_note()">
+                        <input type="text" formControlName="note_content">
+                        <button type="submit" class="btn" (click)="btn_submit_click('add_note')">Thêm</button>
+                        <p *ngIf="create_note_check">{{create_note_check}}</p>
+                    </form>
+                    <div class="list_note">
+                        <div class="note_item" *ngFor="let n of _task.notes">
+                            <input class="input_text input_content" type="text" value="{{n.content}}" readonly>
+                            <input class="input_text input_date" type="date" value="{{n.timestamp.toISOString().substring(0,10)}}" readonly>
+                            <button class="btn" (click)="delete_note(n.noteid)">Xóa</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="attachment">
+                    <div class="heading_attachmant">Tệp đính kèm</div>
+                    <form class="add_attachment" [formGroup]="form_attachment" (ngSubmit)="submit_form_att()">
+                        <div class="add_box">
+                            <label>Tên file</label>
+                            <input type="text" formControlName="att_fileName">
+                        </div>
+                        <div class="add_box">
+                            <input type="file" class="input_file" formControlName="att_filePath" (change)="fileSelected($event)">
+                        </div>
+                        <div class="add_btn_att">
+                            <button type="submit" class="add_att" (click)="btn_submit_click('add_att')">Thêm</button>
+                        </div>
+                    </form>
+                    <div class="list_attachment" *ngFor="let a of _task.attachments">
+                        <a (click)="open_file(a.filepath)" target="_blank" >{{a.filename}}</a>
+                        <button type="button" class="btn" (click)="delete_att(a.attachmentid)">Xoá</button>
+                    </div>
+                </div>        
+            </div>  
+        </div>
+        <p *ngIf="update_check">{{update_check}}</p>
+        <div class="btn_task">
+            <button type="submit" class="update_att" (click)="btn_submit_click('update_task')">Update Task</button>
+            <button type="submit" class="delete_att" (click)="btn_submit_click('delete_task')">Dekete Task</button>
+            <button type="submit" class="update_att" (click)="btn_back()">Back</button>
+        </div>
+    </form>
+    <div class="main" *ngIf="!_task">
+        ERROR: Không có dữ liệu
+    </div>
+</section>

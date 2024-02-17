@@ -1,0 +1,194 @@
+section{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    /* background: linear-gradient(to right, #434343 0%, black 100%); */
+    /* background: linear-gradient(to right, #8360c3, #2ebf91); */
+    /* background: linear-gradient(to right, #0f0c29, #302b63,#24243e); */
+    
+}
+p{
+    padding: 0;margin: 0;
+}
+.main{
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    overflow: hidden;
+}
+.main .control_left{
+    min-width: 300px;
+    height: 100%;
+    padding: 5px 5px 10px;
+    /* background: linear-gradient(to right, #8360c3, #2ebf91); */
+    background: white;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.control_left .heading{
+    width: 95%;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+.user_authentication:hover{
+    color: aqua;
+}
+.heading p{
+    margin-bottom: 0;
+    text-align: center;
+}
+.control_left .heading,
+.content_right .heading{
+    font-size: 25px;
+    padding: 10px 0;
+    text-align: center;
+    color: black;
+    font-weight: 600;
+}
+.list_menu{
+    display: flex;
+    flex-grow: 1;
+    padding: 20px;
+    /* margin-top: 10px; */
+    flex-direction: column;
+    width: 100%; height: 100%;
+}
+.list_menu_item{
+    position: relative;
+    border-radius: 8px;
+    font-size: 18px;
+    /* font-weight: 600; */
+    width: 100%;
+    margin-bottom: 5px;
+    background: #64eed0;
+    display: flex;
+    padding: 12px 15px 12px ;
+    /* line-height: 50px; */
+    cursor: pointer;
+}
+.list_menu_item p{
+    width: 100%;
+    height: 100%;
+}
+.list_menu a:hover{
+    text-decoration:underline ;
+}
+.subnav{
+    /* display: none;  ko hiển thị menu cấp 2 của more */
+    top: 100%; /* Căn chỉnh trong trường hợp hiển thị không đúng */
+    left: 0;
+    width: 100%;
+    position: absolute; 
+    /*Absolute: Giá trị này sẽ giúp định vị trí tuyệt đối cho thành phần theo thành phần bao ngoài, 
+    hoặc ít nhất là theo cửa sổ trình duyệt*/
+    background-color: #fff;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ */
+    list-style-type: none;
+}
+.subnav a{
+    color: #000;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px; /* Kích thước*/
+    line-height: 38px;
+}
+
+.main .content_right{
+    flex-grow: 1;
+    max-width: 950px;
+    /* min-width: 800px; */
+    /* background: linear-gradient(to left, #8360c3, #2ebf91); */
+    background: rgb(231, 231, 231);
+    /* padding: 0 0 0 10px; */
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+}
+.content_right .main_content{
+    position: relative;
+    flex-grow: 1;
+    
+    overflow: scroll;
+}
+
+@media(min-width: 1000px){
+    .responsive_nav{
+        display: none;
+    }
+    .responsive_nav i{
+        font-size: 45px;
+        color: white;
+    }
+}
+@media(max-width: 1000px){
+
+    .responsive_nav{
+        display: block;
+        padding: 10px 15px;
+    }
+    .responsive_nav i{
+        font-size: 45px;
+        color: rgb(0, 0, 0);
+    }
+
+    .responsive_nav{
+        display: block;
+        position: absolute;
+        z-index: 100;
+    }
+    .main .control_left{
+        position: absolute;
+        background: rgb(218, 217, 217);;
+        z-index: 1;
+        width: 50%;
+    }
+
+
+    .main .content_right{
+        flex-grow: 1;
+        max-width: 950px;
+        width: 100%;
+        /* background: linear-gradient(to left, #8360c3, #2ebf91); */
+        background: rgb(231, 231, 231);
+        /* padding: 0 0 0 10px; */
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media(max-width: 400px)
+{
+    .content_right .heading{
+        font-size: 18px;
+        padding: 3px 0;
+        text-align: center;
+        color: black;
+    }
+    .responsive_nav i{
+        font-size: 18px;
+        color: rgb(0, 0, 0);
+    }
+    .list_menu_item{
+        position: relative;
+        border-radius: 8px;
+        font-size: 12px;
+        /* font-weight: 600; */
+        width: 90%;
+        margin-bottom: 5px;
+        background: #64eed0;
+        display: flex;
+        padding: 12px 5px 12px ;
+        /* line-height: 50px; */
+        cursor: pointer;
+    }
+}

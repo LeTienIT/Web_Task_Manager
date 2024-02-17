@@ -1,0 +1,36 @@
+
+
+<section>
+    <div class="main">
+        <div class="box_main">
+            <h2>{{TimeNow}}</h2>
+            <div class="box">
+                <h3>Số prject bắt đầu trong ngày: <span>{{tongP_startN}}</span></h3>
+            </div>
+            <div class="box">
+                <h3>Số prject hết hạn trong ngày: <span>{{tongP_endN}}</span></h3>
+            </div>
+            <div class="box">
+                <h3>Số task hết hạn trong ngày: <span>{{tongT_endN}}</span></h3>
+            </div>
+        </div>
+        <div class="box_main">
+            <h2>Tổng hợp</h2>
+            <div class="box">
+                <h3>Tổng số prject đã tạo: <span> {{tongso_P}} </span></h3>
+            </div>
+            <div class="box">
+                <h3>Tổng số prject đã hoàn thành: <span>{{tongP_Successfully}}</span></h3>
+                <progress value="{{tongP_Successfully}}" max="{{tongso_P}}" min="0"></progress>
+            </div>
+            <div class="box">
+                <h3>Tổng số prject hết hạn: <span>{{tongP_Close}}</span></h3>
+                <progress value="{{tongP_Close}}" max="{{tongso_P}}" min="0"></progress>
+            </div>
+            <div class="box">
+                <h3>Tổng số task hết hạn: <span>{{tongT_Close}}</span></h3>
+                <progress value="{{tongT_Close}}" max="{{tongso_T}}" min="0"></progress>
+            </div>
+        </div>
+    </div>
+</section>

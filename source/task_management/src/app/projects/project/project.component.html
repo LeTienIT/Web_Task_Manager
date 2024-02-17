@@ -1,0 +1,36 @@
+
+<section>
+    <form class="form_search" (submit)="$event.preventDefault();">
+        <div class="input_box">
+            <input type="text" [(ngModel)]="searchTitle" name="searchTitle">
+            <button type="button" (click)="search_Title()">Search</button>
+        </div>
+    </form>
+    <div class="list_projects" *ngIf="!check_search">
+        <div *ngIf="list_project.length <= 0">Chưa có project nào</div>
+        <a class="project_box" [routerLink]="'/Manager/Detail/' + item.title+'/'+item.projectid" *ngFor="let item of list_project">
+            <div class="project_title">
+                <h5>{{item.title | uppercase}}</h5>
+                <h6 class="project_visibility">{{item.visibility | visibility}}</h6>
+            </div>
+            <div class="project_description">
+                <h6>{{item.description}}</h6>
+            </div>
+        </a>
+    </div>
+    <div class="list_projects" *ngIf="check_search">
+        <div *ngIf="list_project_search.length <= 0">Không tìm thấy dữ liệu</div>
+        <a class="project_box" [routerLink]="'/Manager/Detail/' + item.title+'/'+item.projectid" *ngFor="let item of list_project_search">
+            <div class="project_title">
+                <h5>{{item.title | uppercase}}</h5>
+                <h6 class="project_visibility">{{item.visibility | visibility}}</h6>
+            </div>
+            <div class="project_description">
+                <h6>{{item.description}}</h6>
+            </div>
+        </a>
+    </div>
+</section>
+<div class="loading" *ngIf="loading">
+    <h3>.......</h3>
+</div>

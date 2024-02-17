@@ -1,0 +1,25 @@
+
+<section>
+    <h2 class="heading">Project</h2>
+    <form class="form_search" (submit)="$event.preventDefault();">
+        <div class="input_box">
+            <input type="text" [(ngModel)]="title_key" name="searchTitle"> <!-- -->
+             <button type="button" (click)="search_click()">Search</button><!--(click)="search_Title()" -->
+        </div>
+    </form>
+    <div class="list_projects" *ngIf="list_project"><!--  -->
+        <div *ngIf="list_project.length <= 0">Không tìm thấy dữ liệu</div>
+         <a class="project_box" [routerLink]="'/Search_Task/'+ title_key+'/' + p.title+'/'+p.projectid" *ngFor="let p of list_project"><!-- *ngFor="let item of list_project" -->
+            <div class="project_title">
+                <h5>{{p.title}}</h5>
+                <h6 class="project_visibility">{{p.visibility| visibility}}</h6>
+            </div>
+            <div class="project_description">
+                 <h6>{{p.description}}</h6>
+            </div>
+        </a>
+    </div>
+</section>
+<div class="loading" *ngIf="loading">
+    <h3>.......</h3>
+</div>

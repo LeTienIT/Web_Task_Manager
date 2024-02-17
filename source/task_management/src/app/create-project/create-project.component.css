@@ -1,0 +1,166 @@
+section{
+    max-width: 95%;
+    height: 100%;
+    /* display: flex; */
+    overflow: hidden;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+}
+label{
+    padding: 0;
+    margin: 0;
+}
+.create_project,
+.create_task{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    gap: 20px;
+    border-bottom: 1px solid black;
+}
+.text_header{
+    width: 100%;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.create_project .form_box{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.form_box label,
+.form_box_visibility label{
+    flex: 0 1 30%;
+    font-size: 20px;
+}
+.form_box input{
+    flex: 1 1 50%;
+    padding: 3px 10px;
+    font-size: 16px;
+    overflow: auto;
+    text-overflow: ellipsis;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid black;
+}
+
+.form_box_visibility{
+    width: 80%;
+    display: flex;
+    justify-content: start;
+}
+.form_box_visibility select{
+    padding: 3px 12px;
+}
+
+.create_task{
+    border-bottom: none;
+}
+.list_task{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.quantity{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+.quantity button{
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+.task_item{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-direction: column;
+    border-bottom: 1px red solid;
+    /* border-bottom: 1px solid red; */
+}
+.form_item{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    
+}
+.task_item label{
+    flex: 0 1 30%;
+}
+.task_item input{
+    flex: 1 1 60%;
+    padding: 3px 10px;
+    font-size: 16px;
+    overflow: auto;
+    text-overflow: ellipsis;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid black;
+}
+.btn_controller{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.btn_controller button{
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    padding: 3px 15px;
+    text-transform: uppercase;
+    color: white;
+    background: rgb(102, 80, 80);
+    min-width: 90px;
+    opacity: .8;
+}
+.btn_controller button:hover{
+    background: black;
+    opacity: 1;
+    transition: .2s;
+}
+@media(max-width: 650px)
+{
+    .text_header{
+        font-size: 25px;
+    }
+    .form_box label,
+    .form_box_visibility label{
+        flex: 0 1 30%;
+        font-size: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis
+    }
+    .quantity{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: 100%;
+        gap: 5px;
+    }
+    .quantity button{
+        padding: 3px;
+        border-radius: 6px;
+    }
+}

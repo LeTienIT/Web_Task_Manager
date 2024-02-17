@@ -1,0 +1,36 @@
+<div id="main">
+    <div class="navbar">
+        <header>
+            <h2 class="logo" *ngIf="check_title_screen">Task Management</h2>
+            <h2 class="logo" *ngIf="!check_title_screen">TM</h2>
+            <div class="responsive_nav" ><i (click)="click_menu_responsive(1)" class="fa fa-bars" aria-hidden="true"></i></div>
+            <nav class="navigation" *ngIf="check_menu_nav">
+                <a (click)="home_click()">Home</a>
+                <a (click)="manager_click()">Manager</a>
+                <a (click)="click_Account()" *ngIf="check_logout_status">Account</a>
+                <!-- <a>Services</a>
+                <a>Contact</a> -->
+                <button *ngIf="check_login_status" class="button-login" (click)="click_Login()">Login</button>
+                <button *ngIf="check_logout_status" class="button-login" (click)="click_Logout()">Logout</button>
+            </nav>
+        </header>
+    </div>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="footer">
+        <footer class="">
+            <div class="copyright-section">
+                <span class="">© 2024 Company, Inc</span>
+            </div>
+        
+            <div class="app-links-section">
+                <a class="icon-link"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                <a class="icon-link"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                <a class="icon-link"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            </div>
+        </footer>
+      </div>
+</div>
+

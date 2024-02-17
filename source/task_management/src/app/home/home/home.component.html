@@ -1,0 +1,22 @@
+
+<section>
+    <div class="main">
+        <div class="text">
+            <div class="heading">
+                <h1>WELCOME</h1>
+            </div> 
+            <div class="sub_heading">
+                <p id="text_sub_heading">
+                    <span *ngIf="check_sub_heading">"Chào mừng đến với S2 - Nền tảng đa chức năng để quản lý công việc, tạo lập kế hoạch và tối ưu hóa năng suất. Khám phá cơ hội sáng tạo và tích hợp công nghệ vào cuộc sống hàng ngày của bạn. Dễ dàng, linh hoạt và hiệu quả - Cơ Mà giúp bạn tạo ra lịch trình, quản lý công việc và đưa ra quyết định thông minh. Bắt đầu hành trình của bạn với chúng tôi ngay hôm nay!"</span>
+                </p>
+            </div>
+        </div>
+        <div class="btn_box">
+            <div class="search_project">
+                <input type="text" [(ngModel)]="title_key">
+                <a (click)="search_click()">Search</a>
+            </div>
+            <button class="btn" (click)="letGo_Click()">Let Go</button>
+        </div>
+    </div>
+</section>

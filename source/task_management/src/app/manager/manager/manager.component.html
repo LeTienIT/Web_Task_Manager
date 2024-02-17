@@ -1,0 +1,36 @@
+<section>
+    <div class="main">
+        <div class="responsive_nav"><i (click)="click_menu_responsive(1)" class="fa fa-bars" aria-hidden="true"></i></div>
+        <div class="control_left" *ngIf="check_menu_nav">
+            <div class="heading">
+                <p class="user_authentication" *ngIf="user_info" >{{user_info.fullname}}</p>
+                <p *ngIf="user_info===undefined">Unknown</p>
+            </div>
+            <div class="list_menu">
+                <a (click)="add_p_click()" class="list_menu_item">
+                    Thêm Project
+                </a>
+                <a (click)="thong_ke_click()"  class="list_menu_item">
+                    Thống kê
+                </a>
+                <a class="list_menu_item" *ngIf="user_info?.isadmin===1">
+                    <p (click)="admin_click()">ADMIN</p>
+                    <div class="subnav" *ngIf="menu_Login">
+                        <li (click)="sub_menu_admin_user()"><a>Account</a></li>
+                        <li (click)="sub_menu_admin_history()"><a>System history</a></li>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="content_right">
+            <div class="heading">
+                {{string_heading_right}}
+            </div>
+            <div class="main_content">
+                <router-outlet></router-outlet>
+            </div>
+
+        </div>
+    </div>
+    
+</section>

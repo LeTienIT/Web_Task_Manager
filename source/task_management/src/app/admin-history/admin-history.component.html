@@ -1,0 +1,43 @@
+
+<section>
+    <div class="main" *ngIf="list_auditlog">
+        <form class="form_search" (submit)="$event.preventDefault();">
+            <div class="input_box">
+                <input type="text" [(ngModel)]="searchTitle" name="searchTitle"> <!-- -->
+                 <button type="button" (click)="search_Title()">Search</button><!-- -->
+            </div>
+        </form>
+        <div class="list_history" *ngIf="!check_search">
+            <div class="box_history" *ngFor="let a of list_auditlog">
+                <div class="box userID">
+                    {{a.userid}}
+                </div>
+                <div class="box action">
+                    {{a.action}}
+                </div>
+                <div class="box detail">
+                    {{a.details}}
+                </div>
+                <div class="box time">
+                    {{a.timestamp}}
+                </div>
+            </div>
+        </div>
+        <div class="list_history" *ngIf="check_search">
+            <div class="box_history" *ngFor="let a of list_auditlog_search">
+                <div class="box userID">
+                    {{a.userid}}
+                </div>
+                <div class="box action">
+                    {{a.action}}
+                </div>
+                <div class="box detail">
+                    {{a.details}}
+                </div>
+                <div class="box time">
+                    {{a.timestamp}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

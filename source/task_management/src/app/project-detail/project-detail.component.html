@@ -1,0 +1,33 @@
+<section>
+    <div class="main">
+        <div class="heading">
+            <h3>{{projectTitle}}</h3>
+            <button (click)="btn_update()">Update</button>
+        </div>
+        <div class="task_list">
+            <div *ngIf="list_task.length <= 0">
+                <p>Chưa có task nào được tạo trong project này</p>
+                <button (click)="back_project()" class="btn">Quay lại</button>
+            </div>
+            <a [routerLink]="'/Manager/Task/'+ task.taskid" *ngFor="let task of list_task" class="task_item">
+                
+                <div class="task_title">
+                    <h5>{{task.title}}</h5>
+                </div>
+                <div class="progress">
+                    <progress value="{{task.status}}" max="100"></progress>
+                    <label>{{task.status}}%</label>
+                    <p>Deadline: <span>{{task.deadline|date}}</span></p>
+                </div>
+            </a> 
+
+        </div>
+        <div class="btn_controller">
+            <button type="button" (click)="btn_back()">Back</button>
+        </div>
+    </div>
+    
+</section>
+<div class="loading" *ngIf="loading">
+    <h3>.......</h3>
+</div>
